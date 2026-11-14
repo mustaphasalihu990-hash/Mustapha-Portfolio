@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/jpeg" href="/favicon.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Mustapha Salihu is a software engineer, web developer, AI developer, and research enthusiast building technology for healthcare, education, and real-world impact."
+    />
+    <meta
+      name="keywords"
+      content="Mustapha Salihu, software engineer, web developer, AI developer, healthcare technology, educational technology, portfolio"
+    />
+    <meta name="theme-color" content="#0f766e" />
+    <meta property="og:title" content="Mustapha Salihu | Software Engineer, Web Developer & AI Developer" />
+    <meta
+      property="og:description"
+      content="Building technology. Creating solutions. Shaping the future."
+    />
+    <meta property="og:type" content="website" />
+    <title>Mustapha Salihu | Software Engineer | Web Developer | AI Developer</title>
+  </head>
+  <script>
+    const t = localStorage.getItem('theme') || 'system'
+    const dark = t === 'dark' || (t === 'system' && matchMedia('(prefers-color-scheme: dark)').matches)
+    document.documentElement.classList.toggle('dark', dark)
+  </script>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #f7f5f2;
+  --fg: #111827;
+  --muted: #5d6676;
+  --accent: #0f766e;
+  --card: rgba(255, 255, 255, 0.7);
+  --border: rgba(17, 24, 39, 0.1);
+}
+
+.dark {
+  --bg: #020817;
+  --fg: #e5e7eb;
+  --muted: #9aa3b2;
+  --accent: #2dd4bf;
+  --card: rgba(15, 23, 42, 0.7);
+  --border: rgba(148, 163, 184, 0.18);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(circle at top, rgba(45, 212, 191, 0.12), transparent 25%),
+    var(--bg);
+  color: var(--fg);
+  font-family: Inter, 'Segoe UI', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+  line-height: 1.6;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: rgba(45, 212, 191, 0.25);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
