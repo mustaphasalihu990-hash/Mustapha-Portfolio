@@ -1,4 +1,4 @@
-import { GitBranch, Menu, X } from 'lucide-react'
+import { GitBranch, Menu, MessageCircle, X } from 'lucide-react'
 import { useState } from 'react'
 import { useTheme } from './hooks/useTheme'
 import ThemeToggle from './components/ThemeToggle'
@@ -19,7 +19,7 @@ export default function App() {
     <div className="min-h-screen bg-bg text-fg antialiased">
       <header className="sticky top-0 z-50 border-b border-fg/10 bg-bg/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <a href="#top" className="text-lg font-semibold tracking-[0.16em] text-fg">
+          <a href="#top" className="text-sm font-semibold tracking-[0.12em] text-fg sm:text-lg sm:tracking-[0.16em]">
             {profile.name.toUpperCase()}
           </a>
 
@@ -50,14 +50,18 @@ export default function App() {
             <ThemeToggle theme={theme} setTheme={setTheme} />
           </div>
 
-          <button
-            type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-fg/10 text-fg md:hidden"
-            aria-label="Toggle menu"
-            onClick={() => setMenuOpen((v) => !v)}
-          >
-            {menuOpen ? <X size={18} /> : <Menu size={18} />}
-          </button>
+          <div className="flex shrink-0 items-center gap-2 md:hidden">
+            <ThemeToggle theme={theme} setTheme={setTheme} compact />
+            <button
+              type="button"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-fg/10 text-fg"
+              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={menuOpen}
+              onClick={() => setMenuOpen((v) => !v)}
+            >
+              {menuOpen ? <X size={18} /> : <Menu size={18} />}
+            </button>
+          </div>
         </div>
 
         {menuOpen ? (
@@ -128,7 +132,22 @@ export default function App() {
               >
                 X (Twitter)
               </a>
+              <a
+                href={profile.whatsapp}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-fg/15 px-6 py-3 font-medium text-fg transition hover:border-accent hover:text-accent"
+              >
+                <MessageCircle size={18} />
+                WhatsApp · {profile.phone}
+              </a>
             </div>
+            {profile.availableForCollaboration ? (
+              <p className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-accent">
+                <span className="h-2 w-2 rounded-full bg-accent" />
+                Available for collaboration
+              </p>
+            ) : null}
           </div>
         </section>
       </main>
@@ -159,6 +178,9 @@ export default function App() {
               <a href={profile.x} target="_blank" rel="noreferrer" className="transition hover:text-fg">
                 X (Twitter)
               </a>
+              <a href={profile.whatsapp} target="_blank" rel="noreferrer" className="transition hover:text-fg">
+                WhatsApp
+              </a>
             </div>
           </div>
         </div>
@@ -170,3 +192,4 @@ export default function App() {
     </div>
   )
 }
+

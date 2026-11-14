@@ -5,8 +5,9 @@ export const profile = {
   intro:
     "I'm Mustapha Salihu, an aspiring software engineer and technology enthusiast exploring the intersection of software development, artificial intelligence, healthcare, and education.",
   email: 'mustaphasalihu990@il.com',
-  phone: '',
-  showPhone: false,
+  phone: '09137488405',
+  whatsapp: 'https://wa.me/2349137488405',
+  availableForCollaboration: true,
   location: 'Nigeria',
   github: 'https://github.com/mustaphasalihu990-hash',
   x: 'https://x.com/DevSurgonX',

@@ -62,7 +62,7 @@ export default function Hero() {
           <Reveal>
             <p className="inline-flex items-center gap-2 rounded-full border border-fg/15 bg-white/50 px-3 py-1.5 text-sm text-muted shadow-sm backdrop-blur-sm dark:bg-[#111827]/50">
               <span className="h-2 w-2 rounded-full bg-accent" />
-              Open to meaningful tech collaboration
+              Available for collaboration
             </p>
           </Reveal>
 
